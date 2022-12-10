@@ -1,6 +1,6 @@
-module.exports = {
+zmodule.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
   },
-}
+};
