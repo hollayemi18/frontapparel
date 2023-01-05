@@ -90,6 +90,7 @@ const Register = () => {
             <div className=" ml-24 md:mx-16">
 
               <Link
+              to="/Confirm"
                 type="submit" 
                 className="bg-color1 ml-12
         hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-4"
