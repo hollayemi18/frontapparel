@@ -1,34 +1,64 @@
 import React from 'react'
 import Home from './componet/Home'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from './auth/Login';
-import Register from './auth/Register';
+import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Explore from './componet/Explore'
 import Blog from './componet/Blog';
 import Ease from './componet/Ease'
 import Contact from './componet/Contact'
 import Confirm from './auth/Confirm'
 import NotFound from './componet/NotFound';
-import Dashboard from './clientApp/Dashboard';
+import Dashboard from './auth/Dashboard';
+import Login from './auth/Login';
+import Register from './auth/Register';
 
+
+const router  = createBrowserRouter([
+  {
+    path : '/',
+    element : <Home></Home>
+  },
+   {
+    path : '/blog',
+    element : <Blog></Blog>
+  },
+   {
+    path : '/ease',
+    element : <Ease></Ease>
+  },
+   {
+    path : '/explore',
+    element : <Explore></Explore>
+  },
+   {
+    path : '/contact',
+    element : <Contact></Contact>
+  },
+   {
+    path : '/register',
+    element : <Register></Register>
+  },
+   {
+    path : '/confirm',
+    element : <Confirm></Confirm>
+  },
+   {
+    path : '/dashboard',
+    element : <Dashboard></Dashboard>
+  },
+   {
+    path : '/login',
+    element : <Login></Login>
+  },
+   {
+    path : '*',
+    element : <NotFound></NotFound>
+  },
+])
 function Main() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/confirm" element={<Confirm />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/ease" element={<Ease />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <main>
+      <RouterProvider router={router}></RouterProvider>
+    </main>
   )
 }
 

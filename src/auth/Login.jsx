@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import img1 from '../img/img1.png'
-//import Axios from "axios"
+import axios from "axios"
 
 
 
@@ -13,6 +13,14 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const submitForm = async (e) => {
     e.preventDefault()
+    try {
+      await axios.post("http://localhost:8000/",(
+        email, password
+      ))
+    } catch (error) {
+      
+    }
+
     }
   return (
     <div>
@@ -31,7 +39,7 @@ const Login = () => {
           className="bg-gray-200 drop-shadow-3xl mt-2 mx-6"
         >
 
-          <form onSubmit={submitForm}
+          <form 
             className="flex flex-col gap-10 px-12 py-16">
             <div className="flex flex-col gap-2 md:mx-16">
               <label
@@ -39,7 +47,7 @@ const Login = () => {
                 className="pl-5 text-color1 text-lg font-bold md:text-2xl"
               >
                 Email
-              </label>
+                 </label>
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -64,6 +72,7 @@ const Login = () => {
             <div className="ml-16 md:mx-16">
               <Link
                 type="submit" to="/dashboard"
+                onSubmit={submitForm}
                 className="bg-color1 ml-24
         hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-4"
               >
