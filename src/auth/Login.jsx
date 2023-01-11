@@ -1,12 +1,27 @@
-import React from "react";
+  import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import img1 from '../img/img1.png'
 import axios from "axios"
-
-
+import { Formik, useFormik } from "formik";
+import { Toaster } from "react-hot-toast";
+import { emailValidate } from "../helper/validate";
 
 const Login = () => {
+  const formik = useFormik({
+    initialValues :{
+      email : '',
+      password : ''
+    },
+    validate: emailValidate,
+    validateOnBlur : false,
+    validateOnChange : false,
+    onSubmit : async values =>{
+      console.log(values)
+    }
+  })
+
+
   const date = new Date();
   const year = date.getFullYear();
   const [password, setPassword] = useState("");
@@ -34,12 +49,12 @@ const Login = () => {
         </h2>
         <h4 className="text-black font-semibold pt-3 text-3xl  text-center">
           <i>Login</i>
-        </h4>
+        </h4> 
         <div
           className="bg-gray-200 drop-shadow-3xl mt-2 mx-6"
         >
-
-          <form 
+          <Toaster position="top" reverseOrder= {false}  ></Toaster>
+          <form onSubmit={formik.handleSubmit}
             className="flex flex-col gap-10 px-12 py-16">
             <div className="flex flex-col gap-2 md:mx-16">
               <label
@@ -49,8 +64,8 @@ const Login = () => {
                 Email
                  </label>
               <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+              {...formik.getFieldProps('email')}
+              
                 type="email"
                 className="rounded-full text-xl pl-8 text-black bg-yellow-50 border-none h-10"
               />
@@ -63,21 +78,18 @@ const Login = () => {
                 Password
               </label>
               <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+              {...formik.getFieldProps('password')}
+                
                 type="password"
                 className="rounded-full text-xl pl-8 text-color4  border-none h-10"
               />
             </div>
             <div className="ml-16 md:mx-16">
-              <Link
-                type="submit" to="/dashboard"
-                onSubmit={submitForm}
-                className="bg-color1 ml-24
+              <button type="submit" 
+                 className="bg-color1 ml-24
         hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-4"
-              >
-                Login
-              </Link>
+              >login</button>
+         
             </div>
             <div className="mt-10 flex flex-row text-center items-center justify-evenly">
               <p className="text-sm  font-normal">Already a User? </p>
