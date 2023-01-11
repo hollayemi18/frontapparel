@@ -67,7 +67,7 @@ const Login = () => {
               {...formik.getFieldProps('email')}
               
                 type="email"
-                className="rounded-full text-xl pl-8 text-black bg-yellow-50 border-none h-10"
+                className="rounded-full text-xl pl-8 text-black bg-yellow-50 border-none h-10 md:text-sm"
               />
             </div>
             <div className="flex flex-col gap-2 md:mx-16">
@@ -81,7 +81,7 @@ const Login = () => {
               {...formik.getFieldProps('password')}
                 
                 type="password"
-                className="rounded-full text-xl pl-8 text-color4  border-none h-10"
+                className="rounded-full text-xl pl-8 text-color4  border-none h-10 md:text-sm"
               />
             </div>
             <div className="ml-16 md:mx-16">
