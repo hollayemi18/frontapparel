@@ -5,7 +5,7 @@ import img1 from '../img/img1.png'
 import axios from "axios"
 import { Formik, useFormik } from "formik";
 import { Toaster } from "react-hot-toast";
-import { emailValidate } from "../helper/validate";
+import { loginValidate } from "../helper/validate";
 
 const Login = () => {
   const formik = useFormik({
@@ -13,7 +13,7 @@ const Login = () => {
       email : '',
       password : ''
     },
-    validate: emailValidate,
+    validate: loginValidate,
     validateOnBlur : false,
     validateOnChange : false,
     onSubmit : async values =>{
@@ -51,12 +51,13 @@ const Login = () => {
           <i>Login</i>
         </h4> 
         <div
-          className="bg-gray-200 drop-shadow-3xl mt-2 mx-6"
+          className="bg-green-200 shadow-lg mt-2 mx-6"
         >
-          <Toaster position="top" reverseOrder= {false}  ></Toaster>
+        
           <form onSubmit={formik.handleSubmit}
-            className="flex flex-col gap-10 px-12 py-16">
+            className="flex flex-col gap-6 px-12 py-16">
             <div className="flex flex-col gap-2 md:mx-16">
+          <Toaster></Toaster>
               <label
                 htmlFor=""
                 className="pl-5 text-color1 text-lg font-bold md:text-2xl"
@@ -73,7 +74,7 @@ const Login = () => {
             <div className="flex flex-col gap-2 md:mx-16">
               <label
                 htmlFor=""
-                className="pl-5 text-color1 text-lg font-bold md:text-2xl"
+                className="pl-5 text-color1 text-lg font-bold md:text-2xl "
               >
                 Password
               </label>
@@ -84,26 +85,32 @@ const Login = () => {
                 className="rounded-full text-xl pl-8 text-color4  border-none h-10 md:text-sm"
               />
             </div>
-            <div className="ml-16 md:mx-16">
+            <div className="ml-16 md:mx-10">
               <button type="submit" 
-                 className="bg-color1 ml-24
-        hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-4"
+                 className="bg-color1 ml-4
+        hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-8"
               >login</button>
          
             </div>
-            <div className="mt-10 flex flex-row text-center items-center justify-evenly">
-              <p className="text-sm  font-normal">Already a User? </p>
+              <div className="text-center">
+                <span className='text-gray-500'>Forgot Password? <Link className='text-red-500' to="/recovery">Recover Now</Link></span>
+              </div>
+
+            <div className="mt-2 flex flex-row text-center items-center justify-evenly">
+              <p className="text-sm  font-normal">Not a memeber? </p>
 
               <Link
                 to="/register"
-                className="mb-2 text-lg font-medium text-color1"
+                className="mb-1 text-lg font-medium text-color1"
               >
                 Register
               </Link>
+              
             </div>
-            <h5 className="text-center mt-6">&copy; easetech {year}</h5>
+            
           </form>
         </div>
+            <h5 className="text-center mt-2">&copy; easetech {year}</h5>
       </div>
     </div>
   );
