@@ -1,46 +1,41 @@
-  import React from "react";
+import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import img1 from '../img/img1.png'
-import axios from "axios"
+import { registerUser } from '../helper/helper'
 import { Formik, useFormik } from "formik";
-import { Toaster } from "react-hot-toast";
-import { loginValidate , passwordValidate,c_passwordValidate} from "../helper/validate";
+import toast , { Toaster } from "react-hot-toast";
+import { registerVerify} from "../helper/validate";
 
 const Register = () => {
+  const navigate = useNavigate()
+
   const formik = useFormik({
     initialValues :{
       email : '',
       password : '',
       c_password :''
     },
-    validate:loginValidate,
-    validate: passwordValidate,
-    validate: c_passwordValidate,
+    validate:registerVerify,
 
     validateOnBlur : false,
     validateOnChange : false,
-    onSubmit : async values =>{
-      console.log(values)
+      onSubmit : async values => {
+      values = await Object.assign(values)
+      let registerPromise = registerUser(values)
+      toast.promise(registerPromise, {
+        loading: 'Creating...',
+        success : <b>Register Successfully...!</b>,
+        error : <b>Could not Register.</b>
+      });
+
+      registerPromise.then(function(){ navigate('/Confrim')});
     }
   })
 
 
   const date = new Date();
   const year = date.getFullYear();
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const submitForm = async (e) => {
-    e.preventDefault()
-    try {
-      await axios.post("http://localhost:8000/",(
-        email, password
-      ))
-    } catch (error) {
-      
-    }
-
-    }
   return (
     <div>
       <div className="md:mx-96">
