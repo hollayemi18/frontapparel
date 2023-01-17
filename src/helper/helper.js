@@ -1,22 +1,19 @@
 import axios from "axios";
 //import jwt_decode from "jwt-decode";
 
-axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
-
 /* register user function */
 export async function registerUser(credentials) {
   try {
     const {
       data: { msg },
       status,
-    } = await axios.post(`/register`, credentials);
+    } = await axios.post(`http://localhost:8080/register`, credentials);
 
-    let { username, email } = credentials;
+    let { email } = credentials;
 
     /** send email */
     if (status === 201) {
-      await axios.post("/registerMail", {
-        username,
+      await axios.post("http://localhost:8080/registerMail", {
         userEmail: email,
         text: msg,
       });
