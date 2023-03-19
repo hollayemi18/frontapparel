@@ -5,7 +5,7 @@ const Accordion = () => {
   return (
             <div className="w-full px-4 mb-8">
             <div className="w-full max-w-md p-2 mx-auto rounded-2xl">
-                <h3 className='text-center text-color1 text-3xl mb-6'>FAQ</h3>
+               <h3 className='text-center text-color1 text-3xl mb-6'>FAQ</h3> 
                 <Disclosure>
                     {({ open }) => (
                         <>
