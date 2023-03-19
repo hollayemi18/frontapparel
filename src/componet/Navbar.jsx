@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import eas8 from '../img/as14.png'
+
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
     return (
@@ -7,15 +9,15 @@ function Navbar() {
             <nav className="w-full bg-white text-center shadow-md">
                 <div className="justify-between px-1 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
-                        <div className="flex items-center justify-between py-1 md:py-5 md:block">
-                            <div className='flex flex-row '>
-                            
-                                <a >
-                                    <h2 className="mt-1 font-serif font-extrabold pl-6 text-orange-500 md:text-5xl text-4xl">Ease</h2>
+                        <div className="flex items-center justify-between py-1 md:py-5 ">        
+                                <a className='flex flex-row no-underline'>
+                                     <img src={eas8} className="h-16 w-14"/>
+                                    <h2 className="mt-4 font-serif font-extrabold p2-6 text-orange-500 md:text-5xl text-4xl">Ease
+                                    </h2>       
                                 </a>
-                            </div>
-                            <a className='px-2  py-2 mb-1  ml-36 leading-loose text-xs 
-                    text-center text-white font-semibold bg-slate-800 rounded-xl md:hidden' > Get started</a>
+                            
+                            <button className='p-2 mb-1  ml-32 leading-loose text-xs 
+                    text-center text-white font-semibold bg-slate-800 rounded-xl md:hidden' > Get started</button>
                             <div className="md:hidden">
                                 <button
                                     className="text-black rounded-2xl"
