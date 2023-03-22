@@ -5,7 +5,7 @@ function Features() {
     
             <div className="flex flex-col mt-10 mx-100">
                 <div className="mb-4 text-2xl text-center font-black">
-                    <u className="font-bold text-indigo-800">Features</u>
+                    <u className="font-bold text-indigo-800">Why Ease</u>
                 </div>
 
                 <div className="mt-2 lg:px-30 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">

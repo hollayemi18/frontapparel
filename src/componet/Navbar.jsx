@@ -63,6 +63,10 @@ function Navbar() {
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                                 <button type="submit" className='bg-blue-300 rounded-lg px-4 py-2 text-lg text-orange-600'> sign in</button>
+                                <li className="text-black text-center font-semibold">Explore
+                                </li>
+                                <li className="text-black text-center font-semibold">Categories
+                                </li>
                                 <li className="text-black text-center font-semibold">Why Ease
                                 </li>
                                 <li className="text-black text-center font-semibold">Blog
