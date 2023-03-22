@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ease1 from '../img/eas10.jpg'
 function Ease() {
 
   return (
@@ -9,7 +9,7 @@ function Ease() {
                 <div>
                     <div className="flex items-center justify-between py-1 md:py-5 md:block">
                     <div className='flex flex-row '>
-                    <img  width={40} height={40} alt="" />
+                    <img  src={ease1} width={40} height={40} alt="" />
                     
                      <h2 className="text-1xl mt-1 font-bold text-color1">EaseApparel</h2>
                     

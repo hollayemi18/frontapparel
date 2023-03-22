@@ -1,11 +1,10 @@
 import React from 'react'
-import Ease from './pages/Ease'
-import Home from './pages/home'
+import Homerouter from './router/Homerouter'
 function App() {
   return (
     <>
    
-    < Home />
+    < Homerouter />
 
     </>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import eas8 from '../img/as14.png'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -62,17 +63,31 @@ function Navbar() {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                                <Link to={'/Signin'} className='no-underline '>
                                 <button type="submit" className='bg-blue-300 rounded-lg px-4 py-2 text-lg text-orange-600'> sign in</button>
-                                <li className="text-black text-center font-semibold">Explore
+                                 
+                                </Link>
+                                <Link to='/explore' className='no-underline mt-3'>
+                                    <li className="text-black text-center no-underline mt-2 font-semibold">Explore
                                 </li>
-                                <li className="text-black text-center font-semibold">Categories
+                                </Link>
+                                <Link to='/Categories' className='no-underline mt-3'>
+                                    <li className="text-black text-center no-underline mt-2 font-semibold">Categories
                                 </li>
-                                <li className="text-black text-center font-semibold">Why Ease
+                                </Link>
+                                <Link to='/ease' className='no-underline mt-3'>
+                                    <li className="text-black text-center no-underline mt-2 font-semibold">Why Ease
                                 </li>
-                                <li className="text-black text-center font-semibold">Blog
+                                </Link>
+                                <Link to='/Blog' className='no-underline  hover:text-orange-600'>
+                                    <li className="text-black text-center hover:text-orange-600 no-underline mt-2 font-semibold">Blog
                                 </li>
-                                <li className="text-black text-center font-semibold ">Contact US
+                                </Link>
+                                <Link to='/contact' className='no-underline'>
+                                    <li className="text-black text-center no-underline mt-2 font-semibold">Contact Us
                                 </li>
+                                </Link>
+                                
                             </ul>
 
 
