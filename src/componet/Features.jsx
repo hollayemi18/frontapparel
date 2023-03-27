@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Features() {
   return (
@@ -86,8 +87,8 @@ function Features() {
 
                         <div className="ml-10 mb-0">
 
-                            <a to="/explore" className="block animate-bounce 
-                        px-6 py-2 text-white bg-indigo-900 rounded-full baseline">Explore</a>
+                            <Link to="/explore" className="block no-underline animate-bounce 
+                        px-6 py-2 text-white bg-indigo-900 rounded-full baseline">Explore</Link>
                         </div>
 
                     </div>

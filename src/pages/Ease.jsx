@@ -1,33 +1,16 @@
 import React from 'react'
-import ease1 from '../img/eas10.jpg'
+import ease1 from '../img/eas2.jpg'
+import ease2 from '../img/as14.png'
+import Navbar from '../componet/Navbar'
+import Footer from '../componet/Footer'
+
 function Ease() {
 
   return (
    <div>
-        <nav className="w-full bg-white text-center shadow-md">
-            <div className="justify-between px-1 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-                <div>
-                    <div className="flex items-center justify-between py-1 md:py-5 md:block">
-                    <div className='flex flex-row '>
-                    <img  src={ease1} width={40} height={40} alt="" />
-                    
-                     <h2 className="text-1xl mt-1 font-bold text-color1">EaseApparel</h2>
-                    
-                    </div>
-                        <div className="md:hidden">
-
-                        </div>
-                    </div>
-                </div>
-               
-                <div className="hidden space-x-2 md:inline-block">
-            
-                             Get Started
-              
-                </div>
-            </div>
-        </nav>
+    <Navbar/>
         <div>
+            <img src={ease1} alt="" />
         </div>
         <div>
             <h2 className='text-center my-6  font-2xl text-2xl text-color1'>Why EaseApparel</h2>
@@ -55,12 +38,11 @@ function Ease() {
                          and LOTS MORE 
                         <br />
                         To enjoy our EXCLUSIVE deal and Discounts create an account or log-in with a click
-                        <p  className='px-10  py-4 my-10 leading-loose text-xs 
-                    text-center text-white font-semibold bg-indigo-800 rounded-xl flex justify-center'>Get started</p>
                     </p>
                 </div>
             </p>
         </section>
+        <Footer />
     </div> 
   )
 }

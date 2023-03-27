@@ -1,7 +1,5 @@
 import React from 'react'
-import eas8 from '../img/as14.png'
-import eas2 from '../img/eas2.jpg'
-
+import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
@@ -18,6 +16,7 @@ function Hero() {
                     </div>
                 </div>
                 <div className="flex items-center py-5">
+                    
             <div className="flex space-x-1  ">
                 <input
                     type="text"
@@ -40,6 +39,15 @@ function Hero() {
                         />
                     </svg>
                 </button>
+                <div className="flex items-start">
+
+                        <div className="ml-6 mr-3 mt-2">
+
+                            <Link to="/explore" className="block no-underline animate-bounce 
+                        px-6 py-2 text-white bg-indigo-900 rounded-full baseline">Explore</Link>
+                        </div>
+
+                    </div>
             </div>       
         </div>
       </div>

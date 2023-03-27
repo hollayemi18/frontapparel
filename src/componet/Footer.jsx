@@ -8,12 +8,16 @@ import {
   MDBIcon,
   MDBBtn
 } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 export default function App() {
     const year = new Date()
     const show = year.getFullYear()
   return (
     <MDBFooter className='text-center text-white'>
+                 <button className='px-4 py-2 mb-4  leading-loose text-xs 
+                    text-center font-semibold bg-indigo-800 rounded-x' > <Link to={'/register'} 
+                    className= " text-white no-underline font-semibold bg-indigo-800 rounded-xl ">Get Started</Link></button>
           <a className='flex flex-row no-underline ml-36'>
                                      <img src={eas8} className="h-16 w-14"/>
                                     <h2 className="mt-4 font-serif font-extrabold p2-6 text-orange-500 md:text-5xl text-4xl">Ease

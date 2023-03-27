@@ -11,14 +11,16 @@ function Navbar() {
                 <div className="justify-between px-1 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-1 md:py-5 ">        
-                                <a className='flex flex-row no-underline'>
+                                <Link to={'/'} className='flex flex-row no-underline'>
                                      <img src={eas8} className="h-16 w-14"/>
                                     <h2 className="mt-4 font-serif font-extrabold p2-6 text-orange-500 md:text-5xl text-4xl">Ease
                                     </h2>       
-                                </a>
+                                </Link>
                             
                             <button className='p-2 mb-1  ml-32 leading-loose text-xs 
-                    text-center text-white font-semibold bg-slate-800 rounded-xl md:hidden' > Get started</button>
+                    text-center text-white font-semibold bg-slate-800 rounded-xl md:hidden' > <Link to={'/register'} className='
+                    no-underline text-white 
+                    '>Get Started</Link> </button>
                             <div className="md:hidden">
                                 <button
                                     className="text-black rounded-2xl"
@@ -63,7 +65,7 @@ function Navbar() {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <Link to={'/Signin'} className='no-underline '>
+                                <Link to={'/login'} className='no-underline '>
                                 <button type="submit" className='bg-blue-300 rounded-lg px-4 py-2 text-lg text-orange-600'> sign in</button>
                                  
                                 </Link>
@@ -71,7 +73,7 @@ function Navbar() {
                                     <li className="text-black text-center no-underline mt-2 font-semibold">Explore
                                 </li>
                                 </Link>
-                                <Link to='/Categories' className='no-underline mt-3'>
+                                <Link to='/categories' className='no-underline mt-3'>
                                     <li className="text-black text-center no-underline mt-2 font-semibold">Categories
                                 </li>
                                 </Link>
@@ -79,11 +81,11 @@ function Navbar() {
                                     <li className="text-black text-center no-underline mt-2 font-semibold">Why Ease
                                 </li>
                                 </Link>
-                                <Link to='/Blog' className='no-underline  hover:text-orange-600'>
+                                <Link to='/Blog' className='no-underline mt-3 hover:text-orange-600'>
                                     <li className="text-black text-center hover:text-orange-600 no-underline mt-2 font-semibold">Blog
                                 </li>
                                 </Link>
-                                <Link to='/contact' className='no-underline'>
+                                <Link to='/contact' className='no-underline mt-3'  >
                                     <li className="text-black text-center no-underline mt-2 font-semibold">Contact Us
                                 </li>
                                 </Link>

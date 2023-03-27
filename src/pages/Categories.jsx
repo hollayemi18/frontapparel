@@ -2,14 +2,15 @@ import React from 'react'
 import Navbar from '../componet/Navbar'
 import Footer from '../componet/Footer'
 
-function Explore() {
+
+function Categories() {
   return (
     <div>
-      <Navbar/>
-      Explore
-      <Footer/>
-    </div>
+        <Navbar />
+        Categories
+        <Footer />
+        </div>
   )
 }
 
-export default Explore
+export default Categories
