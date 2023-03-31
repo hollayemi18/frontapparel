@@ -10,7 +10,7 @@ import Footer from '../componet/Footer'
 
 function Home() {
   return (
-    <>
+    <div>
     <Navbar />
     <Hero />
     <Image />
@@ -20,7 +20,7 @@ function Home() {
     <Accordion />
     <Footer/>
 
-    </>
+    </div>
   )
 }
 
