@@ -8,7 +8,7 @@ import Testimony from '../componet/Testimony'
 import How from '../componet/How'
 import Footer from '../componet/Footer'
 
-function home() {
+function Home() {
   return (
     <>
     <Navbar />
@@ -24,4 +24,4 @@ function home() {
   )
 }
 
-export default home
+export default Home
