@@ -55,12 +55,12 @@ const Login = () => {
             <div className="ml-16 md:mx-10">
               <button type="submit" 
                  className="bg-black ml-4
-        hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-8"
+        hover:bg-white hover:text-color1  text-white rounded-lg my-4 py-2 px-8"
               >login</button>
          
             </div>
               <div className="text-center">
-                <span className='text-gray-500'>Forgot Password? <Link className='text-red-500' to="/recovery">Recover Now</Link></span>
+                <span className='text-gray-500'>Forgot Password? <Link className='text-red-500' to="/recovery">Recover</Link></span>
               </div>
 
             <div className="mt-2 flex flex-row text-center items-center justify-evenly">

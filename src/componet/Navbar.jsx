@@ -17,14 +17,14 @@ function Navbar() {
                                     </h2>       
                                 </Link>
                             
-                            <button className='px-2 mb-1  ml-32 leading-loose text-xs 
-                    text-center text-white font-thin bg-slate-800 rounded-md md:hidden' > <Link to={'/register'} className='
+                            <button className='px-2 py-1 mb-1 mr-10 text-1xl
+                    text-center text-white font-thin bg-red-300   rounded-md md:hidden' > <Link to={'/register'} className='
                     no-underline text-white 
                     '>Sign-Up</Link> </button>
                             <div className="md:hidden">
                                 <button
                                     className="text-black rounded-2xl"
-                                    onClick={() => setNavbar(!navbar)}
+                                  onClick={() => setNavbar(!navbar)}
                                 >
                                     {navbar ? (
                                         <svg

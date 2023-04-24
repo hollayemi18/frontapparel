@@ -64,7 +64,7 @@ const Register = () => {
             <div className="ml-16 md:mx-10">
               <button type="submit" 
                  className="bg-black ml-2
-        hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-8"
+        hover:bg-white hover:text-color1  text-white rounded-lg py-2 my-4 px-8"
               >Sign Up</button>
          
             </div>
