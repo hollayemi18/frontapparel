@@ -17,10 +17,10 @@ function Navbar() {
                                     </h2>       
                                 </Link>
                             
-                            <button className='p-2 mb-1  ml-32 leading-loose text-xs 
-                    text-center text-white font-semibold bg-slate-800 rounded-xl md:hidden' > <Link to={'/register'} className='
+                            <button className='px-2 mb-1  ml-32 leading-loose text-xs 
+                    text-center text-white font-thin bg-slate-800 rounded-md md:hidden' > <Link to={'/register'} className='
                     no-underline text-white 
-                    '>Get Started</Link> </button>
+                    '>Sign-Up</Link> </button>
                             <div className="md:hidden">
                                 <button
                                     className="text-black rounded-2xl"
@@ -96,9 +96,12 @@ function Navbar() {
 
                         </div>
                     </div>
-                    <div className="hidden space-x-2 md:inline-block px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800" >
-                            Get Started
-                    </div>
+                    <button className="hidden space-x-2 md:inline-block font-thin px-4 py-2 text-white bg-gray-600 rounded-md shadow
+                     hover:bg-gray-800" >
+                           <Link to={'./register'} className='no-underline text-white'>
+                           Sign-Up
+                           </Link>
+                    </button>
                 </div>
             </nav>
             </div>
