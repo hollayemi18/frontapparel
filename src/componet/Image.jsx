@@ -71,7 +71,7 @@ function Image() {
       </Carousel.Item>
     </Carousel>
     <div>
-      <img src={ease1} className = "max-sm:hidden " alt="" srcset="" />
+      <img src={ease1} className = "max-sm:hidden " alt=""/>
     </div>
  </div>
   );

@@ -9,6 +9,7 @@ import Signup from "../pages/Signup";
 import Signin from "../pages/Signin"
 import NotFound from "../pages/NotFound"
 import Contact from "../pages/Contact";
+import Dashboard from "../clientSide/Dashboard";
 const router  = createBrowserRouter([
   {
     path : '/',
@@ -41,6 +42,10 @@ const router  = createBrowserRouter([
    {
     path : '/login',
     element : <Signin></Signin>
+  },
+     {
+    path : '/dashboard',
+    element : <Dashboard></Dashboard>
   },
    {
     path : '*',

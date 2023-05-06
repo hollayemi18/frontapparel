@@ -8,11 +8,11 @@ function Hero() {
 
                 <div className="flex flex-col  space-y-1 md:w-1/2">
                     <div className='flex flex-col justify-center items-center'>
-                        <h2 className="max-w-md text-4xl text-center font-mono md:text-5xl md:text-left">
+                        <div className="max-w-md text-4xl text-center font-mono md:text-5xl md:text-left">
                             Bringing <i className="text-black  font-bold">fashion</i><br></br> and great
                             <i className="text-orange-700 font-extrabold"> fit</i> to
                             your<br></br><h1 className='font-mono font-extrabold'>Doorstep</h1>
-                        </h2>
+                        </div>
                     </div>
                 </div>
                 <div className="flex items-center py-5">

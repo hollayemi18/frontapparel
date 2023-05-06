@@ -1,11 +1,32 @@
-  import React from "react";
+import React from "react";
+import newRequest from "../utilies/newRequest";
 import { useState } from "react";
 import eas8 from '../img/as14.png'
-import { Link } from "react-router-dom";
+import ease9 from '../img/ease9.png'
+import { Link, useNavigate } from "react-router-dom";
+
 const Login = () => {
-  
 
+  const navigate = useNavigate()
 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState(null)
+
+const handleSubmit= async (e)=>{
+  e.preventDefault()
+try {
+    const res = await newRequest.post("/login", {
+    email,
+    password
+  })
+  if(res){
+    navigate('/dashboard')
+  }
+} catch (err) {
+  setError("Email or Password is incorrect")
+}
+}
   const date = new Date();
   const year = date.getFullYear();
   return (
@@ -15,45 +36,52 @@ const Login = () => {
           className="ml-10 flex flex-row mt-6 text-color1 font-serif 
       font-bold text-4xl"
         >
-          <img src={eas8} alt="" width={40} height={40} />
-          <i>E</i>ase
+          <img src={eas8} alt="" width={60} height={60} />
+          <img src={ease9} alt="" width={60} height={60} />
+          
         </h2>
         <h4 className="text-black font-semibold pt-3 text-3xl  text-center">
           <i>Login</i>
         </h4> 
         <div
-          className="bg-green-700 shadow-lg mt-2 mx-6"
+          className="border-2 shadow-lg mt-2 mx-6"
         >
-        
-          <form onSubmit
-            className="flex flex-col gap-6 px-12 py-16">
+         <div className="pt-8 mx-10 text-center font-bold text-red-400">{error && error}</div>
+          <form onSubmit={handleSubmit}
+            className="flex flex-col gap-6 px-12 pt-8 pb-16">
             <div className="flex flex-col gap-2 md:mx-16">
   
               <label
                 htmlFor=""
-                className="pl-5 text-white text-lg font-bold md:text-2xl"
+                className="pl-5 text-black text-lg font-bold md:text-2xl"
               >
                 Email
                  </label>
-              <input        
+              <input    
+              value={email}
+                onChange={e=>setEmail(e.target.value)}    
                 type="email"
-                className="rounded-full text-xl pl-8 text-black bg-yellow-50 border-none h-10 md:text-sm"
+                className="rounded-full text-xl pl-8 text-black shadow-lg border-green-900 h-10 md:text-sm"
+                
               />
             </div>
             <div className="flex flex-col gap-2 md:mx-16">
               <label
                 htmlFor=""
-                className="pl-5 text-white text-lg font-bold md:text-2xl "
+                className="pl-5 text-black text-lg font-bold md:text-2xl "
               >
                 Password
               </label>
               <input
+              value={password}
+                onChange={e=>setPassword(e.target.value)}  
                 type="password"
-                className="rounded-full text-xl pl-8 text-black bg-yellow-100  border-none h-10 md:text-sm"
+                className="rounded-full text-xl pl-8 text-black shadow-lg border-green-900 h-10 md:text-sm"
+              
               />
             </div>
             <div className="ml-16 md:mx-10">
-              <button type="submit" 
+              <button type="submit"
                  className="bg-black ml-4
         hover:bg-white hover:text-color1  text-white rounded-lg my-4 py-2 px-8"
               >login</button>
