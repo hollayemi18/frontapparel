@@ -5,6 +5,7 @@ import Footer from '../componet/Footer'
 //import newRequest from '../utilies/newRequest'
 import { useNavigate } from 'react-router-dom'
 import Whole from './componet/whole'
+import axios from 'axios'
 function Dashboard() {
 const navigate = useNavigate()
 const [email, setEmail] = useState("")
@@ -12,7 +13,7 @@ const [password, setPassword] = useState("")
 
   const logout  = async(e)=>{
     try {
-    const out  =await newRequest.get('/logout')
+    const out  =await axios.get('https://easeback.onrender.com/logout')
     if (out){
       navigate('/login')
       console.log("successful logout!")
