@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Bottom from './componet/Bottom'
-//import Navbar from './componet/Navbar'
 import Footer from '../componet/Footer'
 //import newRequest from '../utilies/newRequest'
 import { useNavigate } from 'react-router-dom'
