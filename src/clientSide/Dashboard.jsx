@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Bottom from './componet/Bottom'
-import Navbar from './componet/Navbar'
+//import Navbar from './componet/Navbar'
 import Footer from '../componet/Footer'
-import newRequest from '../utilies/newRequest'
+//import newRequest from '../utilies/newRequest'
 import { useNavigate } from 'react-router-dom'
 import Whole from './componet/whole'
 function Dashboard() {
@@ -23,7 +23,7 @@ const [password, setPassword] = useState("")
   }
   const auth =async ()=>{
     try {
-    const res = await newRequest.post("/login", {
+    const res = await axios.post("https://easeback.onrender.com/login", {
     email,
     password
   },{withCredentials: true})

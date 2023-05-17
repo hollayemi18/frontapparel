@@ -4,7 +4,8 @@ import eas8 from '../img/as14.png'
 import ease9 from '../img/ease9.png'
 
 import { Link ,useNavigate} from "react-router-dom";
-import newRequest from "../utilies/newRequest";
+//import newRequest from "../utilies/newRequest";
+import axios from "axios";
 
 const Register = () => {
   const [username , setUsername] = useState('')
@@ -18,7 +19,7 @@ const Register = () => {
   e.preventDefault()
     try {
       
-      const reg = await newRequest.post('/register',{
+      const reg = await axios.post('https://easeback.onrender.com/register',{
         username,email,password,confirm_password
       })
       

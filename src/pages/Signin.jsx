@@ -1,9 +1,10 @@
 import React from "react";
-import newRequest from "../utilies/newRequest";
+//import newRequest from "../utilies/newRequest";
 import { useState } from "react";
 import eas8 from '../img/as14.png'
 import ease9 from '../img/ease9.png'
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
 
@@ -19,7 +20,7 @@ try {
   if(!email  || !password){
     return setError("fields  cannot be empty")
   }
-    const res = await newRequest.post("/login", {
+    const res = await axios.post("https://easeback.onrender.com/login", {
     email,
     password
   },{withCredentials: true})
