@@ -1,5 +1,7 @@
 import React from 'react'
 import eas8 from '../img/as14.png'
+import ease9 from '../img/ease9.png'
+
 
 const Blog = () => {
   return (
@@ -7,7 +9,7 @@ const Blog = () => {
       
 <div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-90 w-60 md:w-80">
     <a href="#" class="block w-full h-full">
-        <img alt="blog photo" src={eas8} class="object-cover w-full max-h-40"/>
+        <img alt="blog photo" src={ease9} class="object-cover w-full max-h-40"/>
         <div class="w-full p-4 bg-white dark:bg-gray-800">
             <p class="font-medium text-indigo-500 text-md">
                 Article
@@ -20,7 +22,7 @@ const Blog = () => {
             </p>
             <div class="flex items-center mt-4">
                 <a href="#" class="relative block">
-                    <img alt="profil" src="/images/person/6.jpg" class="mx-auto object-cover rounded-full h-10 w-10 "/>
+                    <img alt="profil" src={eas8} class="mx-auto object-cover rounded-full h-10 w-10 "/>
                 </a>
                 <div class="flex flex-col justify-between ml-4 text-sm">
                     <p class="text-gray-800 dark:text-white">
