@@ -2,11 +2,14 @@ import React from 'react'
 import eas8 from '../img/as14.png'
 import ease9 from '../img/ease9.png'
 
+import Navbar from '../componet/Navbar'
+import Footer from '../componet/Footer'
+
 
 const Blog = () => {
   return (
     <div>
-      
+      <Navbar/>
 <div class="m-auto overflow-hidden rounded-lg shadow-lg cursor-pointer h-90 w-60 md:w-80">
     <a href="#" class="block w-full h-full">
         <img alt="blog photo" src={ease9} class="object-cover w-full max-h-40"/>
@@ -36,7 +39,7 @@ const Blog = () => {
         </div>
     </a>
 </div>
-
+<Footer />
     </div>
   )
 }

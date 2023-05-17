@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Bottom from './componet/Bottom'
 import Navbar from './componet/Navbar'
 import Footer from '../componet/Footer'
@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 import Whole from './componet/whole'
 function Dashboard() {
 const navigate = useNavigate()
+const [email, setEmail] = useState("")
+const [password, setPassword] = useState("")
 
   const logout  = async(e)=>{
     try {
