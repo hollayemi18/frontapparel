@@ -10,6 +10,7 @@ import Signin from "../pages/Signin"
 import NotFound from "../pages/NotFound"
 import Contact from "../pages/Contact";
 import Dashboard from "../clientSide/Dashboard";
+
 const router  = createBrowserRouter([
   {
     path : '/',
@@ -51,6 +52,11 @@ const router  = createBrowserRouter([
     path : '*',
     element : <NotFound></NotFound>
   },
+     {
+    path : '*',
+    element : <NotFound></NotFound>
+  },
+
 ])
 function Main() {
   return (

@@ -16,15 +16,18 @@ const Login = () => {
 const handleSubmit= async (e)=>{
   e.preventDefault()
 try {
+  if(!email  || !password){
+    return setError("fields  cannot be empty")
+  }
     const res = await newRequest.post("/login", {
     email,
     password
-  })
+  },{withCredentials: true})
   if(res){
     navigate('/dashboard')
   }
 } catch (err) {
-  setError("Email or Password is incorrect")
+  return setError("Email or Password is incorrect")
 }
 }
   const date = new Date();

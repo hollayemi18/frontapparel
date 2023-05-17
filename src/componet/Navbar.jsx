@@ -17,10 +17,15 @@ function Navbar() {
                                     </h2>       
                                 </Link>
                             
-                            <button className='px-2 py-1 mb-1 mr-10 text-1xl
-                    text-center text-white font-thin bg-red-300   rounded-md md:hidden' > <Link to={'/register'} className='
+                            <button className='space-x-2 font-thin px-2 py-1 text-white bg-red-600 rounded-md shadow
+                     hover:bg-gray-800 md:hidden' > <Link to={'/register'} className='
                     no-underline text-white 
                     '>Sign-Up</Link> </button>
+                   < Link to={'/login'} className='no-underline '>
+                                <button type="submit" className='space-x-2  font-thin px-2 py-1 text-white bg-blue-600 rounded-md shadow
+                     hover:bg-gray-800 md:hidden '> sign in</button>
+                                 
+                                </Link>
                             <div className="md:hidden">
                                 <button
                                     className="text-black rounded-2xl"
@@ -65,10 +70,6 @@ function Navbar() {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <Link to={'/login'} className='no-underline '>
-                                <button type="submit" className='bg-blue-300 rounded-lg px-4 py-2 text-lg text-orange-600'> sign in</button>
-                                 
-                                </Link>
                                 <Link to='/explore' className='no-underline mt-3'>
                                     <li className="text-black text-center no-underline mt-2 font-semibold">Explore
                                 </li>
@@ -96,6 +97,11 @@ function Navbar() {
 
                         </div>
                     </div>
+                    <Link to={'/login'} className='no-underline '>
+                                <button type="submit" className='hidden space-x-2 md:inline-block font-thin px-4 py-2 text-white bg-gray-600 rounded-md shadow
+                     hover:bg-gray-800"  '> sign in</button>
+                                 
+                                </Link>
                     <button className="hidden space-x-2 md:inline-block font-thin px-4 py-2 text-white bg-gray-600 rounded-md shadow
                      hover:bg-gray-800" >
                            <Link to={'./register'} className='no-underline text-white'>

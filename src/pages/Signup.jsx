@@ -21,13 +21,14 @@ const Register = () => {
       const reg = await newRequest.post('/register',{
         username,email,password,confirm_password
       })
-      if(reg){
+      
+      if(reg && password === confirm_password){
         navigate('/login')
       }else{
-        setError("password not match")
+       return setError("password not match")
       }
     } catch (err) {
-      setError("username is taken")
+      setError("somethiing went wrong")
     }
   }
     const date = new Date();
@@ -50,6 +51,7 @@ const Register = () => {
         <div
           className="border-2 shadow-lg mt-1 mx-6"
         >
+         <div className="pt-8 mx-10 text-center font-bold text-red-400">{error && error}</div>
         
           <form onSubmit={registerHandle}
             className="flex flex-col gap-6 px-12 pb-16 pt-6">
