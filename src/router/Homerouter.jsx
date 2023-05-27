@@ -5,11 +5,16 @@ import Categories from "../pages/Categories";
 import Ease from "../pages/Ease";
 import Blog from "../pages/Blog";
 import Explore from "../pages/Explore";
-import Signup from "../pages/Signup";
-import Signin from "../pages/Signin"
+import Signup from "../auth/Signup";
+import Signin from "../auth/Signin"
 import NotFound from "../pages/NotFound"
 import Contact from "../pages/Contact";
 import Dashboard from "../clientSide/Dashboard";
+import ClientHome from "../clientSide/page/ClientHome"
+import Wallet from "../clientSide/page/Wallet"
+import Order from "../clientSide/page/Order"
+import Settings from "../clientSide/page/Settings"
+import Profile from "../clientSide/page/Profile"
 
 const router  = createBrowserRouter([
   {
@@ -49,8 +54,24 @@ const router  = createBrowserRouter([
     element : <Dashboard></Dashboard>
   },
    {
-    path : '*',
-    element : <NotFound></NotFound>
+    path : '/dashboard/client',
+    element : <ClientHome></ClientHome>
+  },
+   {
+    path : '/dashboard/wallet',
+    element : <Wallet></Wallet>
+  },
+    {
+    path : '/dashboard/order',
+    element : <Order></Order>
+  },
+    {
+    path : '/dashboard/setting',
+    element : <Settings></Settings>
+  },
+    {
+    path : '/dashboard/profile',
+    element : <Profile></Profile>
   },
      {
     path : '*',

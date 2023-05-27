@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import eas8 from '../img/as14.png'
 import ease9 from '../img/ease9.png'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link ,useNavigate} from "react-router-dom";
 //import newRequest from "../utilies/newRequest";
 import axios from "axios";
@@ -17,26 +18,30 @@ const Register = () => {
   const navigate = useNavigate()
   const registerHandle= async (e)=>{
   e.preventDefault()
-    try {
-      
-      const reg = await axios.post('https://easeback.onrender.com/register',{
+    try {    
+      if(password !== confirm_password){
+        return toast.error("password not match")
+      }  
+        if(!email  || !password  || !username ||!confirm_password){
+         return toast.error("All fields are required")
+      }
+      const reg = await axios.post('http://localhost:8080/register',{
         username,email,password,confirm_password
       })
-      
-      if(reg && password === confirm_password){
+      if(reg){
         navigate('/login')
-      }else{
-       return setError("password not match")
+       return toast.success("successfully registered")
       }
-    } catch (err) {
-      setError("somethiing went wrong")
+      
+    } catch (error) {
+    return toast.error("email or username is taken")
     }
   }
     const date = new Date();
   const year = date.getFullYear();
   return (
     <div  >
-          
+          <ToastContainer />
       <div className=" md:mx-96  " >
         <h2
           className="ml-10 flex flex-row mt-6 text-color1 font-serif 

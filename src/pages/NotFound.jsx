@@ -2,18 +2,28 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../componet/Navbar'
 import Footer from '../componet/Footer'
+import pic from '../img/8.svg'
 function NotFound() {
     return (
         <div>
         <Navbar />
-        <div className='flex flex-col text-center items-center 
-      h-96  mx-36 my-28  md:ml-84'>
-
-            <Link to="/" className='border-4  p-36 '>
-                <i className='font-medium text-3xl mb-10'> c-PAGE ERROR</i>
-                <button className='text-white p-3 bg-slate-700  rounded-2xl'>Go To HOMEpage</button>
-            </Link>
+        
+<div class="relative h-screen overflow-hidden bg-indigo-900">
+    <img src={pic} class="absolute object-cover w-full h-full"/>
+    <div class="absolute inset-0 bg-black opacity-25">
+    </div>
+    <div class="container relative z-10 flex items-center px-6 py-32 mx-auto md:px-12 xl:py-40">
+        <div class="relative z-10 flex flex-col items-center w-full font-mono">
+            <h1 class="mt-4 text-5xl font-extrabold leading-tight text-center text-white">
+                You&#x27;re alone here
+            </h1>
+            <p class="font-extrabold text-white text-8xl my-44 animate-bounce">
+                404
+            </p>
         </div>
+    </div>
+</div>
+
         <Footer/>
         </div>
     )

@@ -1,10 +1,13 @@
 import React from "react";
-//import newRequest from "../utilies/newRequest";
+import newRequest from "../utilies/newRequest";
 import { useState } from "react";
 import eas8 from '../img/as14.png'
 import ease9 from '../img/ease9.png'
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
 
@@ -18,23 +21,24 @@ const handleSubmit= async (e)=>{
   e.preventDefault()
 try {
   if(!email  || !password){
-    return setError("fields  cannot be empty")
+    return toast.error("fields  cannot be empty")
   }
-    const res = await axios.post("https://easeback.onrender.com/login", {
+    const res = await axios.post("http://localhost:8080/login", {
     email,
     password
   },{withCredentials: true})
   if(res){
     navigate('/dashboard')
   }
-} catch (err) {
-  return setError("Email or Password is incorrect")
+} catch (error) {
+  return toast.error("Email or Password is incorrect")
 }
 }
   const date = new Date();
   const year = date.getFullYear();
   return (
     <div>
+      
       <div className="md:mx-96">
         <h2
           className="ml-10 flex flex-row mt-6 text-color1 font-serif 
@@ -50,8 +54,10 @@ try {
         <div
           className="border-2 shadow-lg mt-2 mx-6"
         >
-         <div className="pt-8 mx-10 text-center font-bold text-red-400">{error && error}</div>
+      <ToastContainer />
+        
           <form onSubmit={handleSubmit}
+
             className="flex flex-col gap-6 px-12 pt-8 pb-16">
             <div className="flex flex-col gap-2 md:mx-16">
   

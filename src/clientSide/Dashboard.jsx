@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import Bottom from './componet/Bottom'
+import Bottom from './Bottom'
 import Footer from '../componet/Footer'
 //import newRequest from '../utilies/newRequest'
 import { useNavigate } from 'react-router-dom'
-import Whole from './componet/whole'
+import ClientNavbar from './componets/ClientNavbar'
 import axios from 'axios'
 function Dashboard() {
 const navigate = useNavigate()
@@ -12,7 +12,7 @@ const [password, setPassword] = useState("")
 
   const logout  = async(e)=>{
     try {
-    const out  =await axios.get('https://easeback.onrender.com/logout')
+    const out  =await axios.get('http://localhost:8080/logout')
     if (out){
       navigate('/login')
       console.log("successful logout!")
@@ -23,7 +23,7 @@ const [password, setPassword] = useState("")
   }
   const auth =async ()=>{
     try {
-    const res = await axios.post("https://easeback.onrender.com/login", {
+    const res = await axios.post("http://localhost:8080/login", {
     email,
     password
   },{withCredentials: true})
@@ -31,25 +31,20 @@ const [password, setPassword] = useState("")
     navigate('/dashboard')
   }
     } catch (error) {
-      
+      navigate('/')
     }
   }
   return (
    <div>
-    <Whole />
-     {auth ? 
-    
-     (<div>
-       <h5>welcome </h5>
+  
+     <div>
+       <ClientNavbar />
            <button onClick={logout} className="bg-black ml-4
         hover:bg-white hover:text-color1  text-white rounded-lg py-2 px-8">  
                 Logout 
               </ button>
-     </div>)
-      : (<div>
-        not allowed 
-      </div>)}
-      <Footer/>
+     </div>
+  
     <Bottom />
 
    </div>
